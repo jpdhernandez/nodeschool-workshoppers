@@ -7,7 +7,7 @@ module.exports = function (dir, fileExt, callback) {
     if (err) return callback(err);
 
     list = _.filter(list, (file) => {
-      return path.extname(file) === `.${fileExt}`;
+      return path.extname(file) === fileExt;
     });
 
     callback(null, list);

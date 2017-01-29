@@ -2,12 +2,12 @@ const fs = require("fs");
 const dir = process.argv[2];
 const _ = require("underscore");
 
-fs.readdir(`${dir}`, (err, list) => {
+fs.readdir(dir, (err, list) => {
   if (err) console.log(err);
 
   _.each(list, (item) => {
-    if (item.split(".")[1] === `${process.argv[3]}` )
-      console.log(`${item}`);
+    if (item.split(".")[1] === process.argv[3])
+      console.log(item);
   });
 });
 
